@@ -10,15 +10,17 @@ import (
 func main() {
 	fmt.Println("============")
 
-	rand.Seed(time.Now().UnixNano())
+	source := rand.NewSource(time.Now().UnixNano())
+    rng := rand.New(source)
+
 	// 生成 [0,n) 的數字，不包括n
 	// 此寫法會生成 1 ~ 100 數字
-	n := rand.Intn(100) + 1
+	n := rng.Intn(100) + 1
 	fmt.Println(n)
 
 	times := 0
 	for {
-		n := rand.Intn(100) + 1
+		n := rng.Intn(100) + 1
 		times++
 		if n == 99 {
 			break
@@ -34,7 +36,7 @@ func main() {
 		// label2:
 		for j := 0; j <= 5; j ++ {
 			fmt.Printf("j : %d \t", j)
-			if 7 == i {
+			if i == 7 {
 				break label1
 			}
 		}
