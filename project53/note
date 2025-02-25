@@ -1,0 +1,2 @@
+go run main.go -race
+-race可以查看是否存在資源競爭的問題 

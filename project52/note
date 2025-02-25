@@ -1,0 +1,5 @@
+go test 執行測試，除非有錯誤，否則不會輸出log
+go test -v 執行測試，無論成敗，都會輸出log
+
+go test -v name_test.go test.go 測試單個文件內，需帶上被測試的方法源文件
+go test -v name_test.go TestAaa 測試指定方法
